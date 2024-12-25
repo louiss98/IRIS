@@ -1,0 +1,15 @@
+
+  #simulation-view {
+    padding: 0px;
+  }
+  
+  .simulation {
+    width: 100%;
+    height: 80%;
+    /* background-color: white; */
+  }
+  
+  #simulator-container {
+    width: 100%;
+    height: 100%;
+  }

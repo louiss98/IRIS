@@ -1,0 +1,104 @@
+/* Navigation Bar */
+.navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 1);
+    /* backdrop-filter: blur(10px); */
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* App Title */
+.app-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.app-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 0px;
+}
+
+/* Robot Info */
+.robot-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 80px; /* Fixed distance from logo */
+}
+
+.robot-name {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.robot-status {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.robot-status span {
+    margin-right: 5px;
+    color: #333;
+}
+
+.status-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Settings Button */
+.settings-button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 300;
+}
+
+.settings-button img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Emergency Stop Button */
+.emergency-stop {
+    background-color: #ff0000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.emergency-stop:hover {
+    transform: scale(1.1);
+    background-color: #cc0000;
+}
+
+.emergency-stop:active {
+    transform: scale(0.95);
+    background-color: #990000;
+}

@@ -1,0 +1,187 @@
+.control-panel {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 100%;
+}
+
+.play-button-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.play-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #a2b1d1;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.play-button.running {
+    background-color: #205999;
+}
+
+.play-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #a2b1d1;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+}
+
+.running .progress-ring {
+    opacity: 1;
+}
+
+.info-container {
+    flex-grow: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.program-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.author-name {
+    font-size: 18px;
+    color: #666;
+}
+
+.utility-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.utility-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.utility-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.utility-button:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+.play-button-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.progress-wrap {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.progress-wrap svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    transform: rotate(-90deg);
+}
+
+.progress-wrap circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke: #424242;
+    transform: translate(0, 0);
+    stroke-linecap: round;
+}
+
+.progress-wrap circle.progress-circle {
+    stroke: #205999;
+    stroke-dasharray: 176;
+    stroke-dashoffset: 176;
+    transition: none;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #a2b1d1;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button img {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dashoffset: 176;
+        stroke-width: 3;
+    }
+}
+
+.running .progress-circle {
+    animation: progress 1.5s linear forwards;
+}
+
+
+
+
+
+
+
+
+/* For the icons, ensure you have corresponding PNG files */
+.utility-button.save img { content: url('assets/download.png'); }
+.utility-button.export img { content: url('assets/file-export.png'); }
+.utility-button.delete img { content: url('assets/trash.png'); }
