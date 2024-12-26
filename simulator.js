@@ -96,13 +96,6 @@ function outputCameraCoordinates() {
 setInterval(outputCameraCoordinates, 1000);
 
 
-
-
-
-
-
-
-
 // // Handle window resize
 window.addEventListener('resize', onWindowResize, false);
 
@@ -112,6 +105,39 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
 }
+
+function animateCameraToPosition() {
+    const targetPosition = new THREE.Vector3(0.81, 0.85, -0.01);
+    const startPosition = camera.position.clone();
+    const duration = 2000; // Duration in milliseconds
+    const startTime = Date.now();
+
+    function updateCamera() {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Interpolate position only
+        camera.position.lerpVectors(startPosition, targetPosition, progress);
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCamera);
+        }
+    }
+
+    updateCamera();
+}
+
+// Immediately start camera animation and repeat
+async function startCameraAnimation() {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    animateCameraToPosition();
+    // Repeat the animation every 3 seconds (2 seconds for animation + 1 second pause)
+    setInterval(animateCameraToPosition, 5000);
+}
+
+// Start the animation immediately when the scene loads
+startCameraAnimation();
 
 // Animation loop
 function animate() {

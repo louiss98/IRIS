@@ -1,18 +1,27 @@
 /* Existing light mode styles */
 .sidebar-paged {
   position: absolute;
-  top: 100px;
-  right: 59%;
-  width: 400px;
-  height: calc(100% - 100px);
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  top: 109px;
+  right: 0%;
+  width: 350px;
+  height: calc(100% - 120px);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  mask: padding-box;
-  border-radius: 12px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+
+}
+
+.sidebar-paged::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .sidebar-segments {
@@ -33,7 +42,7 @@
   font-weight: bold;
   user-select: none;
   background-color: #ffffff;
-  color: #000000;
+  color: #752727;
   transition: background-color 0.3s ease;
 }
 
@@ -50,7 +59,7 @@
 
 /* Dark Mode Styles */
 .dark-mode .sidebar-paged {
-  background-color: rgba(40, 40, 40, 0.9);
+  background-color: rgba(116, 54, 54, 0);
   color: #ffffff;
   box-shadow: -2px 0 5px rgba(255, 255, 255, 0.1);
 }
@@ -106,7 +115,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 200px; /* Fixed height */
+  height: 100px; /* Fixed height */
   width: 100%; /* Ensure full width */
   margin: 0; /* Remove any default margins */
   overflow: hidden; /* Prevent content overflow */

@@ -32,6 +32,9 @@
             <img src="assets\icons\wifi.png" alt="Status Icon" class="status-icon" />
           </div>
         </div>
+        <div class="emergency-stop">
+          <button class="emergency-stop-button">Emergency Stop</button>
+        </div>
         <div class="settings-button">
           <img
             src="assets\icons\settings.png"
@@ -39,71 +42,71 @@
             class="settings-icon"
           />
         </div>
+        
       </div>
 
-      <!-- Main Content Area (flexbox layout for programming and simulation) -->
+      <!-- Main Content Area -->
       <div class="main-content">
-        <!-- Programming Window -->
-        <div id="programming-window" class="panel">
-          <div class="control-panel">
-            <div class="play-button-container">
-              <div class="progress-wrap">
-                <svg>
-                  <circle cx="30" cy="30" r="28"></circle>
-                  <circle
-                    cx="30"
-                    cy="30"
-                    r="28"
-                    class="progress-circle"
-                  ></circle>
-                </svg>
-                <button class="play-button">
-                  <img src="assets/icons/player-play.png" />
+        <!-- New Programming Window Container -->
+        <div class="programming-window-container">
+          <!-- Existing Programming Window -->
+          <div id="programming-window" class="panel">
+            <div class="control-panel">
+              <div class="play-button-container">
+                <div class="progress-wrap">
+                  <svg>
+                    <circle cx="30" cy="30" r="28"></circle>
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="28"
+                      class="progress-circle"
+                    ></circle>
+                  </svg>
+                  <button class="play-button">
+                    <img src="assets/icons/player-play.png" />
+                  </button>
+                </div>
+              </div>
+              <div class="info-container">
+                <div class="program-title">Getting Started with the Unitree GO2!</div>
+                <div class="author-name">AI Support Team</div>
+              </div>
+              <div class="utility-buttons">
+                <button class="utility-button save">
+                  <img src="assets/icons/download.png" />
+                </button>
+                <button class="utility-button export">
+                  <img src="assets/icons/file-export.png" />
+                </button>
+                <button class="utility-button delete">
+                  <img src="assets/icons/trash.png" />
                 </button>
               </div>
             </div>
-            <div class="info-container">
-              <div class="program-title">Getting Started with the Unitree GO2!</div>
-              <div class="author-name">AI Support Team</div>
-            </div>
-            <div class="utility-buttons">
-              <button class="utility-button save">
-                <img src="assets/icons/download.png" />
-              </button>
-              <button class="utility-button export">
-                <img src="assets/icons/file-export.png" />
-              </button>
-              <button class="utility-button delete">
-                <img src="assets/icons/trash.png" />
-              </button>
-            </div>
-          </div>
-          <div id="editor">// Write your code here...</div>
+            <div id="editor">// Write your code here...</div>
 
-          <div class="segmented-controls">
-            <input id="three-1" name="three" type="radio" checked />
-            <label for="three-1">Beginner</label>
-            <input id="three-2" name="three" type="radio" />
-            <label for="three-2">Intermediate</label>
-            <input id="three-3" name="three" type="radio" />
-            <label for="three-3">Advanced</label>
-            <div class="paddle"></div>
+            <div class="segmented-controls">
+              <input id="three-1" name="three" type="radio" checked />
+              <label for="three-1">Beginner</label>
+              <input id="three-2" name="three" type="radio" />
+              <label for="three-2">Intermediate</label>
+              <input id="three-3" name="three" type="radio" />
+              <label for="three-3">Advanced</label>
+              <div class="paddle"></div>
+            </div>
           </div>
         </div>
-
-        <!-- Simulation View -->
-
         
-  <!-- Simulation View -->
-  <div id="simulation-view" class="panel">
-    <div class="simulation">
-      <div id="simulator-container"></div>
-    </div>
-    <div class="console">
-      <div id="console-output"></div>
-    </div>
-  </div>
-
+        <!-- Existing Simulation View -->
+        <div id="simulation-view" class="panel">
+          <div class="simulation">
+            <div id="simulator-container"></div>
+          </div>
+          <div class="console">
+            <div id="console-output"></div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/urdf-loader@1.0.2/build/urdf-loader.min.js"></script>
@@ -167,7 +170,7 @@ window.addEventListener('load', function() {
         const consoleOutput = ace.edit("console-output");
         consoleOutput.setTheme("ace/theme/terminal");
         consoleOutput.session.setMode("ace/mode/text");
-        consoleOutput.setFontSize(20);
+        consoleOutput.setFontSize(15);
         consoleOutput.setReadOnly(true);
         consoleOutput.renderer.setShowGutter(false);
         consoleOutput.setHighlightActiveLine(false);
@@ -192,89 +195,19 @@ window.addEventListener('load', function() {
 
   <!-- Horizontally scrollable container -->
   <div class="paged-views">
-    <!-- Standard Page -->
     <div class="paged-content" id="content-standard">
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">Backflip</span>
-          <img src="assets/icons/icon1.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Who knew a robot could backflip? 
-          Use this command to make the GO2 perform a backflip.
-          - Please ensure the robot is on flat ground before and clear of people and obstacles before performing.
-
-          INFO:
-          This command is likely trained using Reinforcement Learning.</p>
-      </div>
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">Damp</span>
-          <img src="assets/icons/icon1.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Reduces sudden jerkiness in movements for smoother robot motion.</p>
-      </div>
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">Dance 1</span>
-          <img src="assets/icons/icon2.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">A little bit of this, a little bit of that annnd scene.
-          A fun little robot dance to get the party started.
-
-        </p>
-      </div>
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">Standard Cell 3</span>
-          <img src="assets/icons/icon3.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Sed do eiusmod tempor incididunt.</p>
-      </div>
+        <!-- Cells will be dynamically inserted here -->
     </div>
-
-    <!-- AI Assisted Page -->
+    
     <div class="paged-content" id="content-ai-assisted">
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">AI Assisted Cell 1</span>
-          <img src="assets/icons/icon4.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">AI Assisted Cell 2</span>
-          <img src="assets/icons/icon5.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Excepteur sint occaecat cupidatat non proident.</p>
-      </div>
+        <!-- AI assisted content -->
     </div>
-
-    <!-- AI Page -->
+    
     <div class="paged-content" id="content-ai">
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">AI Cell 1</span>
-          <img src="assets/icons/icon6.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Duis aute irure dolor in reprehenderit.</p>
-      </div>
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">AI Cell 2</span>
-          <img src="assets/icons/icon7.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">In voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </div>
-      <div class="sidebar-cell">
-        <div class="cell-header">
-          <span class="cell-title">AI Cell 3</span>
-          <img src="assets/icons/icon8.png" alt="Icon" class="cell-icon">
-        </div>
-        <p class="cell-description">Excepteur sint occaecat cupidatat non proident.</p>
-      </div>
+        <!-- AI content -->
     </div>
   </div>
 </div>
+<script src="js/sidebar.js"></script>
 </body>
 </html>
