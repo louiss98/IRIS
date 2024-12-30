@@ -12,7 +12,7 @@ Thumbs.db
 *.code-workspace
 
 # Assets
-assets/
+# assets/
 
 # Logs
 *.log

@@ -1,15 +1,13 @@
-/* Existing light mode styles */
 .sidebar-paged {
   position: absolute;
-  top: 109px;
-  right: 0%;
+  top: 410px;
+  right: 1%;
   width: 350px;
-  height: calc(100% - 120px);
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: calc(75% - 120px);
+  background-color: #ffffff; /* Set a visible background color */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility */
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -17,7 +15,7 @@
   border-radius: 10px;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none !important; /* IE and Edge */
-
+  z-index: 1000; /* Added high z-index */
 }
 
 .sidebar-paged::-webkit-scrollbar {
@@ -59,9 +57,10 @@
 
 /* Dark Mode Styles */
 .dark-mode .sidebar-paged {
-  background-color: rgba(116, 54, 54, 0);
-  color: #ffffff;
-  box-shadow: -2px 0 5px rgba(255, 255, 255, 0.1);
+  background: rgba( 229, 239, 248, 0.3 );
+  backdrop-filter: blur( 22px );
+  -webkit-backdrop-filter: blur( 22px );
+  border-radius: 10px;
 }
 
 .dark-mode .sidebar-segments {
@@ -90,7 +89,7 @@
   height: 100%;
   overflow-x: auto; /* Horizontal scroll */
   scroll-snap-type: x mandatory; /* Optional: snap scrolling */
-}
+  scrollbar-width: none; /* Firefox */
 
 /* Each page/section as a "slide" */
 .paged-content {
@@ -105,20 +104,31 @@
 }
 
 /* Sidebar cells */
-/* Sidebar cells */
 .sidebar-cell {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 8px; /* Reduced padding */
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Enhanced drop shadow */
+  border-radius: 0px;
+  padding: 15px;
+  background-color: rgb(255, 255, 255, 0);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100px; /* Fixed height */
-  width: 100%; /* Ensure full width */
-  margin: 0; /* Remove any default margins */
-  overflow: hidden; /* Prevent content overflow */
+  justify-content: space-between; /* Space elements evenly */
+  align-items: flex-start;
+  min-height: 95px;
+  width: 100%;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-cell:hover {
+  background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.sidebar-cell:hover .cell-title,
+.sidebar-cell:hover .cell-description {
+  color: #000000; /* Change text color to black on hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 /* Cell header with icon aligned to the right */
@@ -126,21 +136,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin: 0; /* Remove auto margin */
 }
 
 .cell-title {
+  margin: 0;
+  padding: 0;
   font-weight: bold;
-  font-size: 16px;
-  color: #1b0c0c;
+  font-size: 14px;
+
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1; /* Ensures minimal gap between text lines */
 }
+
 
 .cell-icon {
   width: 24px;
   height: 24px;
 }
 
+/* Remove spacing on the description */
 .cell-description {
-  margin-top: 5px;
+  margin: 0;
+  padding: 0;
+  height: 100px;
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1; /* Matches title line height */
 }
