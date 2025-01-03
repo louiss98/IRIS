@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="app-title"></title>
-    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/control_panel.css" />
     <link rel="stylesheet" href="css/design.css" />
     <link rel="stylesheet" href="css/navigation_bar.css" />
-    <link rel="stylesheet" href="css/control_panel.css" />
-    <link rel="stylesheet" href="css/console.css" />
-    <link rel="stylesheet" href="css/sidebar.css" />
-    <link rel="stylesheet" href="css/simulator.css">
-    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="window-editor/css/editor.css" />
+    <link rel="stylesheet" href="window-sidebar/css/sidebar.css">
+    <link rel="stylesheet" href="window-simulator/css/console.css">
+    <link rel="stylesheet" href="window-simulator/css/simulator.css">
+
   </head>
   <body>
     <!-- Main Container (Flexbox layout) -->
@@ -125,7 +126,7 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script> -->
 
-<script type="module" src="simulator.js"></script>
+<script type="module" src="window-simulator/simulator.js"></script>
 
 <!-- Wait for everything to load before running simulator -->
 <!-- <script>
@@ -140,7 +141,7 @@ window.addEventListener('load', function() {
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
 
-        fetch('config.json')
+        fetch('app-config.json')
         .then(response => response.json())
         .then(config => {
             document.title = config.title;
@@ -209,6 +210,6 @@ window.addEventListener('load', function() {
     </div>
   </div>
 </div>
-<script src="js/sidebar.js"></script>
+<script src="./web-interface/window-simulator/simulator.js"></script>
 </body>
 </html>

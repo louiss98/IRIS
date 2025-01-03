@@ -1,11 +1,11 @@
-// filepath: /vite.config.js
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: './web-interface', // Set the root directory for your project
   server: {
-    open: true,
+    open: true, // Automatically open the browser on server start
   },
   build: {
-    outDir: 'dist',
+    outDir: '../dist', // Output directory for the build
   },
 });
