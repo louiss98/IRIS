@@ -64,6 +64,31 @@ document.addEventListener('DOMContentLoaded', () => {
     We hope you enjoy using the Unitree GO2 EDU Robot Interface Application. Happy coding!
     
     - AI Support Team
+
+    Here's a sample Python code for robot control:
+
+    # Sample Python Code
+
+    def move_robot():
+        print("Moving robot with Python...")
+        time.sleep(1)
+        print("Robot motion complete!")
+
+    # Basic movement functions
+    def forward(duration=2):
+        print("Moving forward for", duration, "seconds")
+        time.sleep(duration)
+
+    def backward(duration=2):
+        print("Moving backward for", duration, "seconds")
+        time.sleep(duration)
+
+    # Example usage
+    move_robot()
+    forward()
+    backward()
+
+    # End of Python example
 `;
 
 const swiftTutorial = `
@@ -75,6 +100,7 @@ This tutorial will guide you through the basics of controlling your robot using 
 
 /* Step 1: Import the necessary module */
 import Foundation
+import time
 
 /* Step 2: Define the Robot class */
 class Robot {

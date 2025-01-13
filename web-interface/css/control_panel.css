@@ -1,30 +1,9 @@
 .control-panel {
     display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    width: 100%;
-}
-
-.play-button-container {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
-}
-
-.play-button {
-    width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background-color: #a2b1d1;
-    border: none;
-    cursor: pointer;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
 }
 
 .play-button.running {
@@ -54,22 +33,40 @@
 }
 
 .info-container {
-    flex-grow: 1;
-    margin-right: 20px;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/static/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/static/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.program-title {
+    height: 100%;
+    font-size: 20px;
+    font-weight: 510;
+    color: #444444;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 60px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
-.program-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
 .author-name {
-    font-size: 18px;
+    font-size: 20px;
     color: #666;
+    font-family: 'Roboto', sans-serif;
 }
 
 .utility-buttons {
@@ -93,62 +90,20 @@
 .utility-button:hover {
     transform: scale(1.1);
 }
-
-
-
-
-
-
-
-
-
-
 .play-button-container {
     position: relative;
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
-}
-
-.progress-wrap {
-    position: relative;
-    width: 60px;
-    height: 60px;
-}
-
-.progress-wrap svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 60px;
-    transform: rotate(-90deg);
-}
-
-.progress-wrap circle {
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke-width: 3;
-    stroke: #424242;
-    transform: translate(0, 0);
-    stroke-linecap: round;
-}
-
-.progress-wrap circle.progress-circle {
-    stroke: #205999;
-    stroke-dasharray: 176;
-    stroke-dashoffset: 176;
-    transition: none;
+    width: 40px;
+    height: 40px;
+    display: flex;           /* Add flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
 }
 
 .play-button {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: #a2b1d1;
     border: none;
@@ -174,12 +129,19 @@
     animation: progress 1.5s linear forwards;
 }
 
+.label-container {
+    display: flex;
+    align-items: center;
+}
 
-
-
-
-
-
+.title-label {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
 
 /* For the icons, ensure you have corresponding PNG files */
 .utility-button.save img { content: url('assets/download.png'); }

@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="window-sidebar/css/sidebar.css">
     <link rel="stylesheet" href="window-simulator/css/console.css">
     <link rel="stylesheet" href="window-simulator/css/simulator.css">
+    <script src="\assets\themes\customTheme.js"></script>
 
   </head>
   <body>
     <!-- Main Container (Flexbox layout) -->
     <div class="container">
       <!-- Navigation Bar -->
-      <div class="navigation-bar">
+      <!-- <div class="navigation-bar">
         <div class="logo-container">
           <img
             src="assets\Public Central Brand Assets\00_Central Logos\02_Vertical\72ppi\CCSU_Logo_Vertical_Blue.png"
@@ -45,7 +46,7 @@
           />
         </div>
         
-      </div>
+      </div> -->
 
       <!-- Main Content Area -->
       <div class="main-content">
@@ -54,26 +55,9 @@
           <!-- Existing Programming Window -->
           <div id="programming-window" class="panel">
             <div class="control-panel">
-              <div class="play-button-container">
-                <div class="progress-wrap">
-                  <svg>
-                    <circle cx="30" cy="30" r="28"></circle>
-                    <circle
-                      cx="30"
-                      cy="30"
-                      r="28"
-                      class="progress-circle"
-                    ></circle>
-                  </svg>
-                  <button class="play-button">
-                    <img src="assets/icons/player-play.png" />
-                  </button>
-                </div>
-              </div>
-              <div class="info-container">
-                <div class="program-title">Getting Started with the Unitree GO2!</div>
-                <div class="author-name">AI Support Team</div>
-              </div>
+              <div class="label-container">
+                <div class="program-title">Intro to the Unitree GO2 EDU - AI Support Team</div>
+            </div>
               <div class="utility-buttons">
                 <button class="utility-button save">
                   <img src="assets/icons/download.png" />
@@ -163,16 +147,36 @@ window.addEventListener('load', function() {
         toggleDarkMode();
 
         const editor = ace.edit("editor");
-        editor.setTheme("ace/theme/cloud_editor_dark");
+        editor.setTheme("ace/theme/cloud_editor");
         editor.session.setMode("ace/mode/text");
         editor.setFontSize(20); // Adjust the value to your preferred font size
         editor.session.setUseWrapMode(true); // Enable word wrap for console output
         editor.setShowPrintMargin(false); // Hide the vertical line
+        editor.session.setMode("ace/mode/python");
+
+        // Load custom FiraCode font
+        const styleSheet = document.createElement("style");
+        styleSheet.textContent = `
+          @font-face {
+            font-family: 'Fira Code';
+            src: url('./assets/fonts/Fira_Code/static/FiraCode-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+          }
+        `;
+        document.head.appendChild(styleSheet);
+
+        editor.setOptions({
+    fontSize: "19px",
+    // This font applies to tokens *not* overridden by the theme
+    fontFamily: "Fira Code, monospace"
+  });
+        editor.renderer.setStyle("gutterWidth", "50px"); // Alternative way to set gutter width
 
         const consoleOutput = ace.edit("console-output");
         consoleOutput.setTheme("ace/theme/terminal");
         consoleOutput.session.setMode("ace/mode/text");
-        consoleOutput.setFontSize(15);
+        consoleOutput.setFontSize(20);
         consoleOutput.setReadOnly(true);
         consoleOutput.renderer.setShowGutter(false);
         consoleOutput.setHighlightActiveLine(false);
