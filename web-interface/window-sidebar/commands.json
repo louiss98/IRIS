@@ -1,0 +1,238 @@
+[
+    {
+      "id": 1001,
+      "name": "Damp",
+      "description": "Reduces sudden jerkiness in movements for smoother robot motion."
+    },
+    {
+      "id": 1002,
+      "name": "BalanceStand",
+      "description": "Keeps the robot upright and balanced while standing."
+    },
+    {
+      "id": 1003,
+      "name": "StopMove",
+      "description": "Immediately halts all robot movement."
+    },
+    {
+      "id": 1004,
+      "name": "StandUp",
+      "description": "Makes the robot stand upright from a resting position."
+    },
+    {
+      "id": 1005,
+      "name": "StandDown",
+      "description": "Transitions the robot from a standing posture to a lower stance."
+    },
+    {
+      "id": 1006,
+      "name": "RecoveryStand",
+      "description": "Regains balance if the robot tumbles or leans too far."
+    },
+    {
+      "id": 1007,
+      "name": "Euler",
+      "description": "Adjusts orientation using Euler angles."
+    },
+    {
+      "id": 1008,
+      "name": "Move",
+      "description": "Executes a basic forward, backward, or lateral walk."
+    },
+    {
+      "id": 1009,
+      "name": "Sit",
+      "description": "Instructs the robot to lower itself into a seated posture."
+    },
+    {
+      "id": 1010,
+      "name": "RiseSit",
+      "description": "Stands the robot from a seated position."
+    },
+    {
+      "id": 1011,
+      "name": "SwitchGait",
+      "description": "Changes the current walking gait (e.g., trot, crawl)."
+    },
+    {
+      "id": 1012,
+      "name": "Trigger",
+      "description": "Fires an internal event or action sequence in the robot."
+    },
+    {
+      "id": 1013,
+      "name": "BodyHeight",
+      "description": "Adjusts the robot’s standing height."
+    },
+    {
+      "id": 1014,
+      "name": "FootRaiseHeight",
+      "description": "Sets how high the feet lift off the ground."
+    },
+    {
+      "id": 1015,
+      "name": "SpeedLevel",
+      "description": "Changes the walking or running speed."
+    },
+    {
+      "id": 1016,
+      "name": "Hello",
+      "description": "Performs a greeting gesture."
+    },
+    {
+      "id": 1017,
+      "name": "Stretch",
+      "description": "Extends limbs for a stretch routine."
+    },
+    {
+      "id": 1018,
+      "name": "TrajectoryFollow",
+      "description": "Follows a predefined path or trajectory."
+    },
+    {
+      "id": 1019,
+      "name": "ContinuousGait",
+      "description": "Engages a continuous stepping pattern."
+    },
+    {
+      "id": 1020,
+      "name": "Content",
+      "description": "Executes a general content command or interaction."
+    },
+    {
+      "id": 1021,
+      "name": "Wallow",
+      "description": "Performs a slow rolling or swaying movement."
+    },
+    {
+      "id": 1022,
+      "name": "Dance1",
+      "description": "Starts a programmed dance routine #1."
+    },
+    {
+      "id": 1023,
+      "name": "Dance2",
+      "description": "Starts a different programmed dance routine."
+    },
+    {
+      "id": 1024,
+      "name": "GetBodyHeight",
+      "description": "Retrieves the current standing height."
+    },
+    {
+      "id": 1025,
+      "name": "GetFootRaiseHeight",
+      "description": "Reports the foot raise height setting."
+    },
+    {
+      "id": 1026,
+      "name": "GetSpeedLevel",
+      "description": "Returns the current walking or running speed."
+    },
+    {
+      "id": 1027,
+      "name": "SwitchJoystick",
+      "description": "Toggles external joystick control mode."
+    },
+    {
+      "id": 1028,
+      "name": "Pose",
+      "description": "Holds the robot in a specific posture."
+    },
+    {
+      "id": 1029,
+      "name": "Scrape",
+      "description": "Performs a ground-scraping action."
+    },
+    {
+      "id": 1030,
+      "name": "FrontFlip",
+      "description": "Executes a forward flip trick."
+    },
+    {
+      "id": 1042,
+      "name": "LeftFlip",
+      "description": "Performs a leftward flip trick."
+    },
+    {
+      "id": 1043,
+      "name": "RightFlip",
+      "description": "Performs a rightward flip trick."
+    },
+    {
+      "id": 1044,
+      "img-path": "/assets/icons/u-turn-left.png", 
+      "name": "BackFlip",
+      "description": "Executes a backward flip stunt."
+    },
+    {
+      "id": 1031,
+      "name": "FrontJump",
+      "description": "Leaps forward from a standing position."
+    },
+    {
+      "id": 1032,
+      "name": "FrontPounce",
+      "description": "Performs a quick forward pounce."
+    },
+    {
+      "id": 1033,
+      "name": "WiggleHips",
+      "description": "Moves the hips side-to-side in a playful motion."
+    },
+    {
+      "id": 1034,
+      "name": "GetState",
+      "description": "Returns the robot’s current status."
+    },
+    {
+      "id": 1035,
+      "name": "EconomicGait",
+      "description": "Switches to a power-saving walking pattern."
+    },
+    {
+      "id": 1045,
+      "name": "LeadFollow",
+      "description": "Engages a lead-and-follow mode with another robot or user."
+    },
+    {
+      "id": 1036,
+      "name": "FingerHeart",
+      "description": "Makes a small heart shape with the robot’s hands."
+    },
+    {
+      "id": 1304,
+      "name": "Bound",
+      "description": "Moves in a bounding pattern (two legs at a time)."
+    },
+    {
+      "id": 1305,
+      "name": "MoonWalk",
+      "description": "Performs a walking motion that mimics the moonwalk."
+    },
+    {
+      "id": 1303,
+      "name": "OnesidedStep",
+      "description": "Steps repeatedly on one side to pivot or circle."
+    },
+    {
+      "id": 1302,
+      "name": "CrossStep",
+      "description": "Executes cross-stepping movements."
+    },
+    {
+      "id": 1301,
+      "name": "Handstand",
+      "description": "Flips the robot onto its forelimbs for a handstand."
+    },
+    {
+      "id": 1039,
+      "name": "StandOut",
+      "description": "Extends limbs outward for a wide posture."
+    },
+    {
+      "id": 1045,
+      "name": "FreeWalk",
+      "description": "Allows the robot to roam in a free-walking mode."
+    }
+  ]
