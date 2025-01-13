@@ -1,9 +1,0 @@
-{
-    "title": "CCSU Robot Dog Interface",
-    "appLogo": "assets/Public Central Brand Assets/00_Central Logos/02_Vertical/72ppi/CCSU_Logo_Vertical_Blue.png",
-    "appTitle": "Robot Interface Application",
-    "robotName": "Unitree GO2 EDU",
-    "statusIcon": "assets/wifi.png",
-    "settingsIcon": "assets/settings.png",
-    "darkMode": false
-}
