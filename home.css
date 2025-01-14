@@ -1,0 +1,174 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f9f9f9; /* Light background for the body */
+}
+
+/* Top navigation bar styles */
+.navbar {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar .title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333; /* Ensure text is readable */
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Hero carousel styles */
+.hero-carousel {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 60px; /* Adjust for the fixed navbar */
+}
+
+.hero-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 0.5s ease-in-out;
+}
+
+.hero-carousel img.active {
+    left: 0;
+}
+
+.hero-carousel img.previous {
+    left: -100%;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold; /* Make the font bold */
+    color: #000000;
+    background: rgba(240, 240, 240, 0.71);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    text-decoration: none;
+    transition: background 0.3s;
+    text-shadow: none;
+}
+
+.hero-button:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Modules section styles */
+.modules-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.module {
+    width: 300px;
+    height: 400px;
+    margin: 5px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.module.gradient {
+    background: radial-gradient(100% 225% at 0% 0%, #DE3E3E 0%, #17115C 100%), 
+                radial-gradient(100% 225% at 100% 0%, #FF9040 0%, #FF0000 100%), 
+                linear-gradient(180deg, #CE63B7 0%, #ED6283 100%), 
+                radial-gradient(100% 120% at 75% 0%, #A74600 0%, #000000 100%), 
+                linear-gradient(310deg, #0063D8 0%, #16009A 50%);
+    background-blend-mode: overlay, color-dodge, color-burn, color-dodge, normal;
+    color: #fff; /* Ensure text is readable */
+}
+
+.module img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.module .module-content {
+    padding: 20px;
+}
+
+.module .module-content h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: inherit; /* Inherit color from parent */
+}
+
+.module .module-content p {
+    color: inherit; /* Inherit color from parent */
+}
