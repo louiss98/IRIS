@@ -1,169 +1,83 @@
-.sidebar-paged {
-  position: absolute;
-  top: 410px;
-  right: 1%;
-  width: 350px;
-  height: calc(75% - 120px);
-  background-color: #ffffff; /* Set a visible background color */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility */
-  backdrop-filter: blur(10.5px);
-  -webkit-backdrop-filter: blur(10.5px);
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #f9f9f9;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 300px;
+  background-color: #f3f3f3;
+  border-right: 1px solid #ddd;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  border-radius: 10px;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
-  z-index: 1000; /* Added high z-index */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-paged::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+.sidebar h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.sidebar-segments {
-  display: flex;
-  justify-content: space-around;
+.sidebar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sidebar button:hover {
+  background-color: #0056b3;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
   border-bottom: 1px solid #ddd;
 }
 
-.sidebar-segments input[type="radio"] {
-  display: none;
+.sidebar li:last-child {
+  border-bottom: none;
 }
 
-.sidebar-segments label {
+.sidebar li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.sidebar li a:hover {
+  color: #007bff;
+}
+
+/* Main content styling */
+.content {
   flex: 1;
-  text-align: center;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  user-select: none;
+  padding: 20px;
   background-color: #ffffff;
-  color: #752727;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar-segments label:hover {
-  background-color: #e2e2e2;
-}
-
-/* Checked segment indicator */
-#segment-standard:checked + label[for="segment-standard"],
-#segment-ai-assisted:checked + label[for="segment-ai-assisted"],
-#segment-ai:checked + label[for="segment-ai"] {
-  background-color: #ddd;
-}
-
-/* Dark Mode Styles */
-.dark-mode .sidebar-paged {
-  background: rgba( 229, 239, 248, 0.3 );
-  backdrop-filter: blur( 22px );
-  -webkit-backdrop-filter: blur( 22px );
-  border-radius: 10px;
-}
-
-.dark-mode .sidebar-segments {
-  border-bottom: 1px solid #555;
-}
-
-.dark-mode .sidebar-segments label {
-  background-color: #444;
-  color: #ffffff;
-}
-
-.dark-mode .sidebar-segments label:hover {
-  background-color: #555;
-}
-
-.dark-mode #segment-standard:checked + label[for="segment-standard"],
-.dark-mode #segment-ai-assisted:checked + label[for="segment-ai-assisted"],
-.dark-mode #segment-ai:checked + label[for="segment-ai"] {
-  background-color: #666;
-}
-
-/* Horizontally scrollable container */
-.paged-views {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  overflow-x: auto; /* Horizontal scroll */
-  scroll-snap-type: x mandatory; /* Optional: snap scrolling */
-  scrollbar-width: none; /* Firefox */
-
-/* Each page/section as a "slide" */
-.paged-content {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  gap: 0; /* Remove gap */
-  padding: 0; /* Remove padding */
-  width: 100%; /* Ensure full width */
-  height: 100%; /* Ensure it takes full height */
-}
-
-/* Sidebar cells */
-.sidebar-cell {
-  border-radius: 0px;
-  padding: 15px;
-  background-color: rgb(255, 255, 255, 0);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Space elements evenly */
-  align-items: flex-start;
-  min-height: 95px;
-  width: 100%;
-  overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sidebar-cell:hover {
-  background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-}
-
-.sidebar-cell:hover .cell-title,
-.sidebar-cell:hover .cell-description {
-  color: #000000; /* Change text color to black on hover */
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-}
-
-/* Cell header with icon aligned to the right */
-.cell-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0; /* Remove auto margin */
-}
-
-.cell-title {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 14px;
-
-  color: #ffffff;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1; /* Ensures minimal gap between text lines */
-}
-
-
-.cell-icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Remove spacing on the description */
-.cell-description {
-  margin: 0;
-  padding: 0;
-  height: 100px;
-  font-size: 14px;
-  color: #ffffff;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1; /* Matches title line height */
 }

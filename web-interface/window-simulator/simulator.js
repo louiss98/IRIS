@@ -9,7 +9,7 @@ import URDFLoader from 'urdf-loader';
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000); // Black background
 
-const container = document.getElementById('simulator-container');
+const container = document.getElementById('simulation-view');
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
@@ -93,7 +93,7 @@ function outputCameraCoordinates() {
 }
 
 // Set interval to call the function every second
-setInterval(outputCameraCoordinates, 1000);
+// setInterval(outputCameraCoordinates, 1000);
 
 
 // // Handle window resize
@@ -137,7 +137,7 @@ async function startCameraAnimation() {
 }
 
 // Start the animation immediately when the scene loads
-startCameraAnimation();
+// startCameraAnimation();
 
 // Animation loop
 function animate() {

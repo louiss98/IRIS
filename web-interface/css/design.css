@@ -80,45 +80,38 @@ body {
 .programming-window-container {
     flex: 1;
     margin: 10px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     overflow: visible;
+    
   }
   
   /* Programming Window */
   #programming-window {
-    background-color: var(--sidebar-background-color);
-    border: 0px solid var(--border-color);
     height: 100%;
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
     overflow: hidden;
     margin: 0; /* Remove existing margins */
   }
 
 /* Programming Window */
 #programming-window {
-    background-color: var(--sidebar-background-color);
-    border: 0px solid var(--border-color);
     flex: 1; /* Make it take up more space than the simulation view */
     display: flex;
     flex-direction: column;  /* Stack contents inside the programming window */
-    border-radius: 12px;
     overflow: hidden; /* This masks content to bounds */
 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added drop shadow */
+    
 }
 
 #programming-window h2 {
     font-size: 20px;
     margin-bottom: 15px;
+    
 }
 
 /* Simulation View */
 #simulation-view {
-    background-color: var(--sidebar-background-color);
-    border: 1px solid var(--border-color);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -126,10 +119,6 @@ body {
     border-radius: 12px;
     overflow: hidden; /* This masks content to bounds */
 
-    margin-right: 10px; /* Add some spacing around the window */
-    margin-left: 5px; /* Add some spacing around the window */
-    margin-top: 10px; /* Add some spacing around the window */
-    margin-bottom: 10px; /* Add some spacing around the window */
 }
 /* Media Query for Responsiveness */
 @media (max-width: 768px) {
