@@ -15,64 +15,41 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0; /* Remove padding */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h1 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
+/* Sidebar title bar styling */
+.sidebar-title-bar {
+  height: 25px; /* Match control panel height */
+  width: 100%; /* Ensure it takes full width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #205999;
+  display: flex;
+  align-items: center;
+  padding-left: 10px; /* Add padding to the left */
+  margin-top: 15px; /* Move the title bar down from the top */
 }
 
-.sidebar input {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 20px;
+.sidebar-title-bar .buttons {
+  display: flex;
+  margin-right: 10px;
 }
 
-.sidebar button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
+.sidebar-title-bar .buttons img {
+  width: 8px; /* Adjust icon size */
+  height: 8px; /* Adjust icon size */
   cursor: pointer;
-  text-align: center;
+  margin-right: 5px;
 }
 
-.sidebar button:hover {
-  background-color: #0056b3;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.sidebar li:last-child {
-  border-bottom: none;
-}
-
-.sidebar li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-}
-
-.sidebar li a:hover {
-  color: #007bff;
+.sidebar-title-bar .title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px; /* Match control panel font size */
+  color: #444444; /* Match control panel color */
+  font-weight: 510; /* Match control panel font weight */
+  text-align: left;
+  margin-top: 5px; /* Move the title down from the top */
 }
 
 /* Main content styling */
@@ -81,3 +58,8 @@ body {
   padding: 20px;
   background-color: #ffffff;
 }
+
+.sidebar li a:hover {
+  color: #007bff;
+}
+

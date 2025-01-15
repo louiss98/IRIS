@@ -47,7 +47,6 @@ body {
     height: 100vh;  /* Ensure it takes full height of the viewport */
     padding: 0;  /* Remove any internal padding */
     margin: 0;  /* Remove any internal margin */
-    margin-top: 60px; /* Adjust based on the height of the top bar */
 }
 
 
@@ -79,9 +78,7 @@ body {
 /* Programming Window Container */
 .programming-window-container {
     flex: 1;
-    margin: 10px;
-    overflow: visible;
-    
+    overflow: visible; 
   }
   
   /* Programming Window */

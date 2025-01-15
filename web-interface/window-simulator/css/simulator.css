@@ -27,28 +27,50 @@
   flex-direction: column;
   width: 33%;
   height: 100%;
-  background-color:#ffffff ;
+  background-color: white;
   position: relative; /* Ensure the console is positioned relative to this container */
 }
 
 #simulation-view {
   flex: 1;
-  width: 80%;
-  height: 40%; /* Adjusted to fit above the console */
-  top: 50%;
-  position: absolute; /* Ensure the simulation view is positioned correctly */
+  width: 95%;
+  height: 50%;
+  background-color: rgb(245, 245, 245);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* aspect-ratio: 1 / 1; This sets the height to be 50% of the width */
 }
 
-.text-view {
-  display: block;
-  width: 100%;
-  min-height: 120px;
-  padding: 8px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 19px;
-  box-sizing: border-box;
-  resize: vertical;
-  border: 0px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+.label-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.label-bubble {
+  background-color: transparent; /* Remove fill color */
+  color: #333; /* Change text color */
+  padding: 20px; /* Increase padding for larger view */
+  border: 2px solid rgb(245, 245, 245); /* Add border */
+  border-radius: 10px;
+  text-align: left; /* Align text to the left */
+  font-family: 'Roboto', sans-serif; /* Change this to your desired font */
+  position: relative; /* Ensure the icon is positioned relative to this container */
+}
+
+.label-bubble img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px; /* Adjust icon size */
+  height: 24px; /* Adjust icon size */
+}
+
+.label-bubble .text {
+  margin-left: 0px; /* Add margin to the left of the text to make space for the icon */
+  margin-top: 15px; /* Add margin to the top of the text */
 }

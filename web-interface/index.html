@@ -13,29 +13,29 @@
     <link rel="stylesheet" href="window-simulator/css/console.css">
     <link rel="stylesheet" href="window-simulator/css/simulator.css">
     <script src="\assets\themes\customTheme.js"></script>
-
   </head>
   <body>
     <!-- Main Container (Flexbox layout) -->
     <div class="container">
-
       <!-- Main Content Area -->
       <div class="main-content">
-
         <div class="sidebar">
-          <h1>Design Notes</h1>
+          <div class="sidebar-title-bar">
+            <div class="buttons">
+              <img src="assets/icons/button1.png" alt="Button 1" />
+              <img src="assets/icons/button2.png" alt="Button 2" />
+            </div>
+            <div class="title">AI Support Team</div>
+          </div>
           <input type="text" placeholder="Search..." />
           <button>New Note</button>
         </div>
-
         <!-- New Programming Window Container -->
         <div class="programming-window-container">
           <!-- Existing Programming Window -->
           <div id="programming-window" class="panel">
             <div class="control-panel">
-              <div class="label-container">
                 <div class="program-title">Intro to the Unitree GO2 EDU - AI Support Team</div>
-            </div>
               <div class="utility-buttons">
                 <button class="utility-button save">
                   <img src="assets/icons/download.png" />
@@ -49,86 +49,63 @@
               </div>
             </div>
             <div id="editor">// Write your code here...</div>
-
-            <div class="segmented-controls">
-              <input id="three-1" name="three" type="radio" checked />
-              <label for="three-1">Beginner</label>
-              <input id="three-2" name="three" type="radio" />
-              <label for="three-2">Intermediate</label>
-              <input id="three-3" name="three" type="radio" />
-              <label for="three-3">Advanced</label>
-              <div class="paddle"></div>
+          </div>
+        </div>
+        <!-- Simulation Container -->
+        <div id="simulator-container" class="simulator-container" style="flex: 1;">
+          <div class="label-grid">
+            <div class="label-bubble">
+              <img src="assets/icons/robot.png" alt="Robot Icon" />
+              <div class="text">
+                <strong>Robot:</strong> Unitree GO2 EDU
+              </div>
+            </div>
+            <div class="label-bubble">
+              <img src="assets/icons/connection.png" alt="Connection Icon" />
+              <div class="text">
+                <strong>Status:</strong> Online
+              </div>
+            </div>
+            <div class="label-bubble">
+              <img src="assets/icons/connection.png" alt="Connection Icon" />
+              <div class="text">
+                <strong>SN:</strong> B42D4000O5R9ELG8
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div id="simulation-view"></div>
+            <div class="console">
+              <div id="console-output"></div>
             </div>
           </div>
         </div>
-        
-      <!-- Simulation Container -->
-      <div id="simulator-container" class="simulator-container" style="flex: 1;">
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-
-          <textarea class="text-view"></textarea>
-          
-        <div id="simulation-view"></div>
-        <div class="console">
-          <div id="console-output"></div>
-        </div>
       </div>
     </div>
-
     <script src="src/ace.js"></script>
     <script src="program_play.js"></script>
     <script src="teleprompter.js"></script>
-    <!-- <script src="simulator.js"></script> -->
-
-<!-- Update URDFLoader CDN to a specific working version -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script> -->
-
-<script type="module" src="window-simulator/simulator.js"></script>
-
-<!-- Wait for everything to load before running simulator -->
-<!-- <script>
-window.addEventListener('load', function() {
-    // Now load simulator.js
-    const script = document.createElement('script');
-    script.src = 'simulator.js';
-    document.body.appendChild(script);
-});
-</script> -->
-
+    <script type="module" src="window-simulator/simulator.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
-
         fetch('app-config.json')
         .then(response => response.json())
         .then(config => {
             document.title = config.title;
             document.getElementById('app-title').textContent = config.title;
-            // document.getElementById('app-logo').src = config.appLogo;
-            // document.getElementById('app-title-text').textContent = config.appTitle;
-            // document.getElementById('robot-name').textContent = config.robotName;
-            // document.getElementById('status-icon').src = config.statusIcon;
-            // document.getElementById('settings-icon').src = config.settingsIcon;
         });
-
-
         const toggleDarkMode = () => {
           document.body.classList.toggle("dark-mode");
           console.log("Dark mode toggled");
         };
-
-        // Example: Toggle dark mode on page load
         toggleDarkMode();
-
         const editor = ace.edit("editor");
         editor.setTheme("ace/theme/cloud_editor");
         editor.session.setMode("ace/mode/text");
-        editor.setFontSize(20); // Adjust the value to your preferred font size
-        editor.session.setUseWrapMode(true); // Enable word wrap for console output
-        editor.setShowPrintMargin(false); // Hide the vertical line
+        editor.setFontSize(20);
+        editor.session.setUseWrapMode(true);
+        editor.setShowPrintMargin(false);
         editor.session.setMode("ace/mode/python");
-
-        // Load custom FiraCode font
         const styleSheet = document.createElement("style");
         styleSheet.textContent = `
           @font-face {
@@ -139,28 +116,19 @@ window.addEventListener('load', function() {
           }
         `;
         document.head.appendChild(styleSheet);
-
         editor.setOptions({
-    fontSize: "19px",
-    // This font applies to tokens *not* overridden by the theme
-    fontFamily: "Fira Code, monospace"
-  });
-        editor.renderer.setStyle("gutterWidth", "50px"); // Alternative way to set gutter width
-
+          fontSize: "15px",
+          fontFamily: "Fira Code, monospace"
+        });
+        editor.renderer.setStyle("gutterWidth", "50px");
         const consoleOutput = ace.edit("console-output");
         consoleOutput.setTheme("ace/theme/terminal");
         consoleOutput.session.setMode("ace/mode/text");
-        consoleOutput.setFontSize(20);
+        consoleOutput.setFontSize(15);
         consoleOutput.setReadOnly(true);
         consoleOutput.renderer.setShowGutter(false);
         consoleOutput.setHighlightActiveLine(false);
       });
     </script>
   </body>
-</html>
-
-
-
-<script src="./web-interface/window-simulator/simulator.js"></script>
-</body>
 </html>
