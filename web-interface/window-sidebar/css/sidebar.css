@@ -21,14 +21,21 @@ body {
 
 /* Sidebar title bar styling */
 .sidebar-title-bar {
-  height: 25px; /* Match control panel height */
-  width: 100%; /* Ensure it takes full width */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #205999;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px; /* Match control panel font size */
+  color: #444444; /* Match control panel color */
+  font-weight: 510; /* Match control panel font weight */
+  text-align: left;
+  padding: 10px; /* Add padding for spacing */
+  line-height: 25px; /* Adjust line height */
+  background-color: #992095; /* Match control panel background color */
+  border-bottom: 1px solid #ddd; /* Add bottom border for separation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  height: auto; /* Ensure height is auto to accommodate padding */
   display: flex;
-  align-items: center;
-  padding-left: 10px; /* Add padding to the left */
-  margin-top: 15px; /* Move the title bar down from the top */
+  align-items: left;
+  justify-content: space-between; /* Ensure space between title and buttons */
+  width: 100%; /* Ensure it takes full width */
 }
 
 .sidebar-title-bar .buttons {
@@ -45,11 +52,11 @@ body {
 
 .sidebar-title-bar .title {
   font-family: 'Roboto', sans-serif;
-  font-size: 17px; /* Match control panel font size */
+  font-size: 15px; /* Match control panel font size */
   color: #444444; /* Match control panel color */
   font-weight: 510; /* Match control panel font weight */
   text-align: left;
-  margin-top: 5px; /* Move the title down from the top */
+  margin-top: 0; /* Ensure the title is aligned properly */
 }
 
 /* Main content styling */
@@ -62,4 +69,3 @@ body {
 .sidebar li a:hover {
   color: #007bff;
 }
-
