@@ -123,12 +123,7 @@ body {
         flex-direction: column; /* Stack the sidebar and content vertically on smaller screens */
     }
 
-    .sidebar {
-        width: 100%;
-        position: relative;
-        height: auto;
-        padding: 10px;
-    }
+
 
     .main-content {
         flex-direction: column; /* Stack the programming and simulation views vertically on smaller screens */

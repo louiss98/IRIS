@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="app-title"></title>
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+
     <link rel="stylesheet" href="css/colors.css" />
     <link rel="stylesheet" href="css/control_panel.css" />
     <link rel="stylesheet" href="css/design.css" />
@@ -15,7 +17,6 @@
     <script src="\assets\themes\customTheme.js"></script>
   </head>
   <body>
-    <!-- Main Container (Flexbox layout) -->
     <div class="container">
       <!-- Main Content Area -->
       <div class="main-content">
@@ -25,10 +26,9 @@
               <img src="assets/icons/button1.png" alt="Button 1" />
               <img src="assets/icons/button2.png" alt="Button 2" />
             </div>
-            <div class="title">AI Support Team</div>
+            <div class="title">Central Connecticut State Univ</div>
           </div>
-          <input type="text" placeholder="Search..." />
-          <button>New Note</button>
+          <div class="chat-container"></div> <!-- Add this line -->
         </div>
         <!-- New Programming Window Container -->
         <div class="programming-window-container">
@@ -37,7 +37,12 @@
             <div class="control-panel">
               <div class="program-title">Intro to the Unitree GO2 EDU - AI Support Team</div>
             </div>
+            
             <div id="editor">// Write your code here...</div>
+
+            <div class="console">
+              <div id="console-output"></div>
+            </div>
           </div>
         </div>
         <!-- Simulation Container -->
@@ -64,9 +69,7 @@
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
             <div id="simulation-view"></div>
-            <div class="console">
-              <div id="console-output"></div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -74,7 +77,8 @@
     <script src="src/ace.js"></script>
     <script src="program_play.js"></script>
     <script src="teleprompter.js"></script>
-    <script type="module" src="window-simulator/simulator.js"></script>
+    <script type="module" src="./window-simulator/simulator.js"></script>
+    <script type="module" src="./window-sidebar/sidebar.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         fetch('app-config.json')
@@ -97,16 +101,27 @@
         editor.session.setMode("ace/mode/python");
         const styleSheet = document.createElement("style");
         styleSheet.textContent = `
-          @font-face {
-            font-family: 'Fira Code';
-            src: url('./assets/fonts/Fira_Code/static/FiraCode-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-          }
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/fonts/Fira_Code/static/FiraCode-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/fonts/Fira_Code/static/FiraCode-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Override Ace keyword styling */
+.ace_keyword {
+  font-weight: 700 !important;
+}
         `;
         document.head.appendChild(styleSheet);
         editor.setOptions({
-          fontSize: "15px",
+          fontSize: "17px",
           fontFamily: "Fira Code, monospace"
         });
         editor.renderer.setStyle("gutterWidth", "50px");

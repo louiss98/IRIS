@@ -53,20 +53,7 @@ const teleprompter = new Teleprompter("editor");
 // Example usage
 document.addEventListener('DOMContentLoaded', () => {
 
-    const message = `Welcome to the Central Connecticut State University Robot Interface App for the Unitree GO2 EDU! ✨
-    
-    This software is designed to make controlling and programming the Unitree GO2 EDU robot accessible to everyone, regardless of experience.
-    
-    Since this is your first time using the robot, we'll guide you through our tutorial to get you started.
-    
-    If you have any further questions, contact @AISupportTeam on Teams.
-    
-    We hope you enjoy using the Unitree GO2 EDU Robot Interface Application. Happy coding!
-    
-    - AI Support Team
-
-    Here's a sample Python code for robot control:
-
+    const message = `
     # Sample Python Code
 
     def move_robot():

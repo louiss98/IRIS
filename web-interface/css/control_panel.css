@@ -1,12 +1,11 @@
 .control-panel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ensure space between title and buttons */
-  padding: 10px; /* Add padding for spacing */
-  background-color: #992095; /* Match control panel background color */
-  border-bottom: 1px solid #ddd; /* Add bottom border for separation */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-}
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding-left: 55px;
+    box-sizing: border-box;
+    background-color: white;
+  }
 
 .play-button.running {
     background-color: #205999;
@@ -38,19 +37,8 @@
     height: 100%;
 }
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/static/Roboto-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/static/Roboto-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 .utility-buttons {
   display: flex;
@@ -114,28 +102,24 @@
 }
 
 .label-container {
-    background-color: #205999;
+    /* background-color: #205999; */
     width: 100%;
     height: 200px;
-    background-color: #a2b1d1;
 }
 
 .program-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px; /* Match control panel font size */
-    color: #444444; /* Match control panel color */
-    font-weight: 510; /* Match control panel font weight */
+    font-family: 'Roboto-Medium', sans-serif;
+    height: 100%;
+    font-size: 17px;
+    color: #444444;
+    font-weight: 510;
     text-align: left;
-    padding: 10px; /* Add padding for spacing */
-    line-height: 25px; /* Adjust line height */
-    background-color: #992095; /* Match control panel background color */
-    border-bottom: 1px solid #ddd; /* Add bottom border for separation */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    height: auto; /* Ensure height is auto to accommodate padding */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensure space between title and buttons */
-  }
+    justify-content: space-between;
+    border-bottom: none; /* Remove the extra border */
+}
 
 /* For the icons, ensure you have corresponding PNG files */
 .utility-button.save img { content: url('assets/download.png'); }

@@ -2,12 +2,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import URDFLoader from 'urdf-loader';
 
-// import URDFLoader from 'urdf-loader';
-
-
 // Initialize the scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x000000); // Black background
+scene.background = new THREE.Color(0xffffff); // White background
 
 const container = document.getElementById('simulation-view');
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -100,7 +97,8 @@ function outputCameraCoordinates() {
 window.addEventListener('resize', onWindowResize, false);
 
 function onWindowResize() {
-    const container = document.getElementById('simulator-container');
+    console.log("test2");
+    const container = document.getElementById('simulation-view');
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -141,9 +139,11 @@ async function startCameraAnimation() {
 
 // Animation loop
 function animate() {
+    console.log("test");
     requestAnimationFrame(animate);
     controls.update();
     renderer.render(scene, camera);
 }
 
+console.log("test3");
 animate();

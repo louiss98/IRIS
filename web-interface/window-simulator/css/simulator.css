@@ -1,5 +1,5 @@
 .console {
-  position: absolute;
+  position: relative;
   bottom: 0;
   height: 25%;
   width: 100%;
@@ -15,7 +15,7 @@
 }
 
 #console-output .ace_content {
-  background-color: rgb(140, 26, 26);
+  background-color: rgb(169, 169, 169);
 }
 
 #console-output .ace_text-layer {
@@ -38,8 +38,7 @@
   background-color: rgb(245, 245, 245);
   position: absolute;
   top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0%;
   /* aspect-ratio: 1 / 1; This sets the height to be 50% of the width */
 }
 
