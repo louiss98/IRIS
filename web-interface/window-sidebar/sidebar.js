@@ -143,8 +143,8 @@ function initializeChat() {
     {
       type: 'button',
       icon: 'assets/icons/u-turn-left.png',  // Check this path
-      title: 'Perform Backflip',
-      description: 'Make the robot do a backflip!'
+      title: 'Wave Hello',
+      description: 'Make the robot wave hello!'
     }
   ]);
 }

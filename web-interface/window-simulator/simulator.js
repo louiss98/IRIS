@@ -4,7 +4,7 @@ import URDFLoader from 'urdf-loader';
 
 // Initialize the scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff); // White background
+scene.background = new THREE.Color(0x0000); // White background
 
 const container = document.getElementById('simulation-view');
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
