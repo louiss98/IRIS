@@ -79,16 +79,17 @@
 .text-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two columns */
-  gap: 10px; /* Space between items */
+  grid-auto-rows: auto; /* Create new rows as needed */
+  gap: 10px;
   padding: 10px;
-  width: 100%; /* Full width */
-  margin-top: 20px; /* Space above the text grid */
+  width: 100%;
+  margin-top: 20px;
 }
 
 .text-item {
-  font-size: 16px; /* Font size */
-  color: gray; /* Text color */
+  font-size: 16px;
+  color: gray;
   padding: 10px;
-  background-color: #f9f9f9; /* Background color for better visibility */
-  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9;
+  border-radius: 5px;
 }

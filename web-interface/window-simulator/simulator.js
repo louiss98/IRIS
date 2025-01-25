@@ -4,7 +4,7 @@ import URDFLoader from 'urdf-loader';
 
 // Initialize the scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0000); // White background
+scene.background = new THREE.Color(0xffffff); // White background
 
 const container = document.getElementById('simulation-view');
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -53,25 +53,30 @@ const loader = new URDFLoader(manager);
 // };
 
 // // Load the URDF file
-loader.load('./robot_files/go2_description.urdf', (robot) => {
+console.log("Starting to load URDF...");
+
+loader.load('./window-simulator/robot_files/go2_description.urdf', (robot) => {
+    console.log("add robot");
     scene.add(robot);
 
     if (robot) {
         // Position adjustment
-        robot.position.set(0, 0.5, 0);  // Center at origin
+        robot.position.set(0, 1, 0);  // Center at origin
         
         // Rotation adjustment (90 degrees around X-axis to correct sideways orientation)
         robot.rotation.x = -Math.PI / 2;
         
         // Scale if needed
-        robot.scale.set(1, 1, 1);
+        robot.scale.set(12, 12, 12);
         
         scene.add(robot);
     }
+}, undefined, (error) => {
+    console.error('An error happened while loading the robot:', error);
 });
 
 
-
+console.log("Loader call done...");
 
 // Function to get camera coordinates
 function getCameraCoordinates() {
@@ -97,7 +102,6 @@ function outputCameraCoordinates() {
 window.addEventListener('resize', onWindowResize, false);
 
 function onWindowResize() {
-    console.log("test2");
     const container = document.getElementById('simulation-view');
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
@@ -139,11 +143,10 @@ async function startCameraAnimation() {
 
 // Animation loop
 function animate() {
-    console.log("test");
     requestAnimationFrame(animate);
     controls.update();
     renderer.render(scene, camera);
 }
 
-console.log("test3");
+
 animate();

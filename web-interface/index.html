@@ -25,9 +25,13 @@
               <img src="assets/icons/button1.png" alt="Button 1" />
               <img src="assets/icons/button2.png" alt="Button 2" />
             </div>
-            <div class="title">CCSU GO2 IDE</div>
+            <div class="title">CENTRAL AI</div>
           </div>
           <div class="chat-container"></div> <!-- Add this line -->
+          <div class="chat-input-container">
+            <input type="text" class="chat-input" placeholder="Type a message...">
+            <img src="assets/icons/send.png" alt="Send" class="send-button">
+          </div>
         </div>
         <!-- New Programming Window Container -->
         <div class="programming-window-container">
@@ -48,19 +52,19 @@
         <div id="simulator-container" class="simulator-container" style="flex: 1;">
           <div class="label-grid">
             <div class="label-bubble">
-              <img src="./assets/icons/wifi.png" alt="Robot Icon" />
+              <img src="./assets/icons/robot.png" alt="Robot Icon" />
               <div class="text">
                 <strong>Robot:</strong> Unitree GO2 EDU
               </div>
             </div>
             <div class="label-bubble">
-              <img src="assets/icons/connection.png" alt="Connection Icon" />
+              <img src="assets/icons/wifi.png" alt="Connection Icon" />
               <div class="text">
                 <strong>Status:</strong> Online
               </div>
             </div>
             <div class="label-bubble">
-              <img src="assets/icons/connection.png" alt="Connection Icon" />
+              <img src="assets/icons/grid-pattern.png" alt="Connection Icon" />
               <div class="text">
                 <strong>SN:</strong> B42D4000O5R9ELG8
               </div>
@@ -69,10 +73,18 @@
           <div id="simulation-view"></div>
           <!-- Add the text grid view below the simulator -->
           <div class="text-grid">
-            <div class="text-item">Text Item 1</div>
-            <div class="text-item">Text Item 2</div>
-            <div class="text-item">Text Item 3</div>
-            <div class="text-item">Text Item 4</div>
+            <div class="text-item">Mode: ${data.mode}</div>
+            <div class="text-item">Progress: ${data.progress}</div>
+            <div class="text-item">Gait Type: ${data.gait_type}</div>
+            <div class="text-item">Foot Raise Height: ${data.foot_raise_height}</div>
+            <div class="text-item">Position: ${data.position.join(', ')}</div>
+            <div class="text-item">Body Height: ${data.body_height}</div>
+            <div class="text-item">Velocity: ${data.velocity.join(', ')}</div>
+            <div class="text-item">Yaw Speed: ${data.yaw_speed}</div>
+            <div class="text-item">Range Obstacle: ${data.range_obstacle}</div>
+            <div class="text-item">Foot Force: ${data.foot_force.join(', ')}</div>
+            <div class="text-item">Foot Position Body: ${data.foot_position_body.join(', ')}</div>
+            <div class="text-item">Foot Speed Body: ${data.foot_speed_body.join(', ')}</div>
           </div>
         </div>
       </div>
@@ -110,6 +122,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Fira Code';
   src: url('./assets/fonts/Fira_Code/static/FiraCode-Bold.ttf') format('truetype');
@@ -136,6 +149,31 @@
         consoleOutput.renderer.setShowGutter(false);
         consoleOutput.setHighlightActiveLine(false);
       });
+
+              // Fetch data periodically
+              function fetchData() {
+          fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+              const outputDiv = document.getElementById('output');
+              outputDiv.innerHTML = `
+                <div class="text-item">Mode: ${data.mode}</div>
+                <div class="text-item">Progress: ${data.progress}</div>
+                <div class="text-item">Gait Type: ${data.gait_type}</div>
+                <div class="text-item">Foot Raise Height: ${data.foot_raise_height}</div>
+                <div class="text-item">Position: ${data.position.join(', ')}</div>
+                <div class="text-item">Body Height: ${data.body_height}</div>
+                <div class="text-item">Velocity: ${data.velocity.join(', ')}</div>
+                <div class="text-item">Yaw Speed: ${data.yaw_speed}</div>
+                <div class="text-item">Range Obstacle: ${data.range_obstacle}</div>
+                <div class="text-item">Foot Force: ${data.foot_force.join(', ')}</div>
+                <div class="text-item">Foot Position Body: ${data.foot_position_body.join(', ')}</div>
+                <div class="text-item">Foot Speed Body: ${data.foot_speed_body.join(', ')}</div>
+              `;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        }
+        setInterval(fetchData, 1000); // Fetch data every second
     </script>
   </body>
 </html>

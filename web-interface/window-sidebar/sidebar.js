@@ -145,7 +145,31 @@ function initializeChat() {
       icon: 'assets/icons/u-turn-left.png',  // Check this path
       title: 'Wave Hello',
       description: 'Make the robot wave hello!'
-    }
+    },
+    {
+      type: 'button',
+      icon: 'assets/icons/u-turn-left.png',  // Check this path
+      title: 'Wave Hello',
+      description: 'Make the robot wave hello!'
+    },
+    {
+      type: 'button',
+      icon: 'assets/icons/u-turn-left.png',  // Check this path
+      title: 'Wave Hello',
+      description: 'Make the robot wave hello!'
+    },
+    {
+      type: 'button',
+      icon: 'assets/icons/u-turn-left.png',  // Check this path
+      title: 'Wave Hello',
+      description: 'Make the robot wave hello!'
+    },
+    {
+      type: 'button',
+      icon: 'assets/icons/u-turn-left.png',  // Check this path
+      title: 'Wave Hello',
+      description: 'Make the robot wave hello!'
+    },
   ]);
 }
 
