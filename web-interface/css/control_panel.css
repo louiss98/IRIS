@@ -1,11 +1,41 @@
 .control-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This spaces the program title and button */
     height: 50px;
-    line-height: 50px;
-    margin: 0;
-    padding-left: 55px;
     box-sizing: border-box;
     background-color: white;
-  }
+    padding: 0 10px; /* 10px from edges if needed */
+}
+
+.stop-button-container {
+    width: 30px;   /* fixed width */
+    height: 30px;  /* fixed height */
+    border-radius: 50%;
+    background-color: #a2b1d1;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stop-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #d9534f;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stop-button img {
+    width: 24px;
+    height: 24px;
+}
 
 .play-button.running {
     background-color: #205999;
@@ -64,18 +94,16 @@
 
 .play-button-container {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;           /* Add flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically */
 }
 
 .play-button {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 30px;   /* fixed width */
+    height: 30px;  /* fixed height */
     border-radius: 50%;
     background-color: #a2b1d1;
     border: none;
@@ -109,16 +137,12 @@
 
 .program-title {
     font-family: 'Roboto-Medium', sans-serif;
-    height: 100%;
     font-size: 17px;
     color: #444444;
     font-weight: 510;
     text-align: left;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: none; /* Remove the extra border */
+    /* Remove any fixed padding-left here if not needed */
+    flex-grow: 1;
 }
 
 /* For the icons, ensure you have corresponding PNG files */

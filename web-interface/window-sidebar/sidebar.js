@@ -123,21 +123,18 @@ function addMessage(profileImg, cells) {
 
 // Example usage:
 function initializeChat() {
-  addMessage('assets/icons/profile1.png', [
+  addMessage('/assets/Public Central Brand Assets/01_Seal/72ppi/CCSU_Seal_Blue.png', [ 
     {
       type: 'text',
-      content: `
-      Welcome to the Central Connecticut State University Robot Interface App for the Unitree GO2 EDU! ✨
+      content: `Welcome to the Central Connecticut State University Robot Interface App for the Unitree GO2 EDU! ✨
+This software is designed to make controlling and programming the Unitree GO2 EDU robot accessible to everyone, regardless of experience.
     
-    This software is designed to make controlling and programming the Unitree GO2 EDU robot accessible to everyone, regardless of experience.
+Since this is your first time using the robot, we'll guide you through our tutorial to get you started.
     
-    Since this is your first time using the robot, we'll guide you through our tutorial to get you started.
+If you have any further questions, contact @AISupportTeam on Teams.
+We hope you enjoy using the Unitree GO2 EDU Robot Interface Application. Happy coding!
     
-    If you have any further questions, contact @AISupportTeam on Teams.
-    
-    We hope you enjoy using the Unitree GO2 EDU Robot Interface Application. Happy coding!
-    
-    - AI Support Team
+- AI Support Team
     `
     },
     {
@@ -148,27 +145,21 @@ function initializeChat() {
     },
     {
       type: 'button',
-      icon: 'assets/icons/u-turn-left.png',  // Check this path
-      title: 'Wave Hello',
-      description: 'Make the robot wave hello!'
+      icon: 'assets/icons/heart.png',  // Check this path
+      title: 'Show Heart',
+      description: 'The robot will draw a heart in the air.'
     },
     {
       type: 'button',
-      icon: 'assets/icons/u-turn-left.png',  // Check this path
-      title: 'Wave Hello',
-      description: 'Make the robot wave hello!'
+      icon: 'assets/icons/corner-up-right.png',  // Check this path
+      title: 'Pounce',
+      description: 'Pounce forward.'
     },
     {
       type: 'button',
-      icon: 'assets/icons/u-turn-left.png',  // Check this path
-      title: 'Wave Hello',
-      description: 'Make the robot wave hello!'
-    },
-    {
-      type: 'button',
-      icon: 'assets/icons/u-turn-left.png',  // Check this path
-      title: 'Wave Hello',
-      description: 'Make the robot wave hello!'
+      icon: 'assets/icons/stretching-2.png',  // Check this path
+      title: 'Dance',
+      description: 'Have the robot perform a fun dance. Ensure there\'s enough space around the robot before starting.'
     },
   ]);
 }

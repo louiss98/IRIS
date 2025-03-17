@@ -22,8 +22,7 @@
     "parcel-bundler": "^1.12.5",
     "rollup": "^4.29.1",
     "static-server": "^2.2.1",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.7"
+    "vite": "^4.0.0"
   },
   "scripts": {
     "dev": "vite",

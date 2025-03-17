@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: '.', // Set the root directory for your project
-  server: {
-    open: true, // Automatically open the browser on server start
-  },
+  root: '.', // The folder where index.html is located
   build: {
-    outDir: '../dist', // Output directory for the build
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, './index.html'),
+      }
+    }
+  },
+  server: {
+    open: true,
   },
 });

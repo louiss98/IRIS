@@ -1,21 +1,31 @@
+
+// import * as THREE from '/node_modules/three/build/three.module.js';
+// import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+// //import URDFLoader from '/node_modules/urdf-loader/src/URDFLoader.js';
+// import URDFLoader from 'urdf-loader/src/URDFLoader.js';
+
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import URDFLoader from 'urdf-loader';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+let scene, camera, renderer, controls;
 
 // Initialize the scene
-const scene = new THREE.Scene();
+function init() {
+scene = new THREE.Scene();
+window.scene = scene;
 scene.background = new THREE.Color(0xffffff); // White background
 
 const container = document.getElementById('simulation-view');
-const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setClearColor(0x2a2a2a, 1);
 renderer.shadowMap.enabled = true;
 container.appendChild(renderer.domElement);
 
 // Add orbit controls
-const controls = new OrbitControls(camera, renderer.domElement);
+controls = new OrbitControls(camera, renderer.domElement);
 camera.position.set(0, 5, 10);
 controls.update();
 
@@ -57,11 +67,12 @@ console.log("Starting to load URDF...");
 
 loader.load('./window-simulator/robot_files/go2_description.urdf', (robot) => {
     console.log("add robot");
+    robot.name = 'robot';
     scene.add(robot);
 
     if (robot) {
         // Position adjustment
-        robot.position.set(0, 1, 0);  // Center at origin
+        robot.position.set(0, 5.5, 0.5);  // Center at origin
         
         // Rotation adjustment (90 degrees around X-axis to correct sideways orientation)
         robot.rotation.x = -Math.PI / 2;
@@ -75,6 +86,8 @@ loader.load('./window-simulator/robot_files/go2_description.urdf', (robot) => {
     console.error('An error happened while loading the robot:', error);
 });
 
+animate();
+}
 
 console.log("Loader call done...");
 
@@ -149,4 +162,4 @@ function animate() {
 }
 
 
-animate();
+document.addEventListener('DOMContentLoaded', init);

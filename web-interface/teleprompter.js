@@ -5,7 +5,7 @@ class Teleprompter {
         this.editor.session.setMode("ace/mode/text");
         this.editor.setReadOnly(true);
         this.editor.setFontSize(20);
-        this.text = "";
+        //this.text = "";
         this.index = 0;
         this.speed = speed;
         this.interval = null;
@@ -52,16 +52,16 @@ const teleprompter = new Teleprompter("editor");
 
 // Example usage
 document.addEventListener('DOMContentLoaded', () => {
+    const editor = ace.edit('editor');
 
     const message = `
-    # Sample Python Code
+    async def move_robot():
+    print("Performing 'Hello' movement...")
+    await conn.datachannel.pub_sub.publish_request_new(
+        RTC_TOPIC["SPORT_MOD"], 
+        {"api_id": SPORT_CMD["Hello"]}
+    )
 
-    def move_robot():
-        print("Moving robot with Python...")
-        time.sleep(1)
-        print("Robot motion complete!")
-
-    # Basic movement functions
     def forward(duration=2):
         print("Moving forward for", duration, "seconds")
         time.sleep(duration)
@@ -71,11 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
         time.sleep(duration)
 
     # Example usage
-    move_robot()
+    await move_robot()
     forward()
     backward()
-
-    # End of Python example
 `;
 
 const swiftTutorial = `
@@ -118,8 +116,9 @@ Congratulations! You've completed the basic tutorial on moving the robot forward
 Feel free to experiment with other movements and commands.
 */
 `;
+    editor.setValue(message, -1); // -1 moves the cursor to the start
 
-    teleprompter.setText(message);
+    //teleprompter.setText(message);
     teleprompter.setSpeed(6); // Adjust speed as needed
-    teleprompter.start();
+    //teleprompter.start();
 });

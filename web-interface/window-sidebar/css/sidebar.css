@@ -8,8 +8,8 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-  width: 500px;
-  min-width: 500px; /* Prevent sidebar from growing */
+  width: 100px;
+  min-width: 400px; /* Prevent sidebar from growing */
   max-width: 500px; /* Prevent sidebar from growing */
   background-color: #f3f3f3;
   border-right: 1px solid #ddd;
@@ -29,6 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Place items at the left by default */
+  border-bottom: 1px solid #ddd;
 }
 
 .sidebar-title-bar .title {
@@ -44,11 +45,13 @@ body {
   display: flex;
   align-items: center;
   margin-right: 15px; /* Spacing between buttons and title */
+  width: 24px; /* Adjusted icon size */
+  height: 24px; /* Adjusted icon size */
 }
 
 .sidebar-title-bar .buttons img {
-  width: 8px; /* Adjust icon size */
-  height: 8px; /* Adjust icon size */
+  width: 24px; /* Adjust icon size */
+  height: 24px; /* Adjust icon size */
   cursor: pointer;
   margin-right: 5px;
 }
@@ -87,8 +90,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: cover;
-  background-color: lightslategray;
+  object-fit:contain;
+  background-color: rgb(218, 223, 227);
 }
 
 
@@ -100,8 +103,8 @@ body {
   width: calc(100% - 50px); /* Account for profile icon width + gap */
   word-wrap: break-word;
   overflow-wrap: break-word;
-  white-space: normal;
-  overflow: hidden;
+  white-space: pre-wrap; /* Support newline characters */
+  overflow: visible;
 }
 
 .text-cell {
@@ -124,6 +127,12 @@ body {
   border: 1px solid lightgray;
   border-radius: 8px;
   background-color: transparent;
+  transition: transform 0.2s ease-in-out; /* Add transition for smooth effect */
+  overflow: visible; /* Ensure content is not clipped */
+}
+
+.button-cell:hover {
+  transform: scale(1.01); /* Slightly increase the size on hover */
 }
 
 .button-cell img {
